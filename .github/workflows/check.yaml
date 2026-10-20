@@ -1,0 +1,17 @@
+name: Check code format
+
+on: [push, pull_request]
+
+jobs:
+  format-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y build-essential cmake clang-format libcmocka-dev
+
+      - name: Check formatting
+        run: ./scripts/check-format.sh
