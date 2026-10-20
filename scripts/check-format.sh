@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Проверяет, что весь C-код отформатирован по .clang-format (стиль WebKit).
+# Проверяет, что весь C-код отформатирован по .clang-format
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
